@@ -20,5 +20,10 @@ var (
     collection = "posts"
 )
 func main(){
+	//MongoDBへ接続
+	session, err := mgo.Dial("mongodb://localhost")
+	if err != nul{
+		panic(err)
+	}
 	
 }
