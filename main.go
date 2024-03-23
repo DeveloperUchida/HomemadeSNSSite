@@ -25,5 +25,25 @@ func main(){
 	if err != nul{
 		panic(err)
 	}
-	
+	defer session.Close()
+
+	//コレクションを取得
+	collection := gin.Default()
+
+	//ポストの一覧を取得するエンドポイント
+	router.GET("/posts",func (c *gin.Content)  {
+		var posts []Post
+		err := collection.Find(nil).All(&posts)
+		if  err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+			return
+		}
+		c.JSON(http.StatusOK, posts)
+	})
+	//ポストを作成するエンドポイント
+	router.POST("/posts", func (c *gin.Content)  {
+		if err := c.BindJSON(&post); err != nil{
+			c.JSON(http.StatusOK)
+		}
+	})
 }
