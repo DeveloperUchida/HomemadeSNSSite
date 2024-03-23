@@ -8,4 +8,5 @@
 
 ```
 2024/03/22 Start of production(制作スタート)
+2024/03/23 Add Gin web framework(Gin webフレームワークを追加)
 ```
