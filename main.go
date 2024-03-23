@@ -18,7 +18,7 @@ type Post struct {
 }
 
 var (
-	session    *mgo.Session
+	//session    *mgo.Session  //警告が表示されるためコメントアウト化しています。
 	dbName     = "somedb"
 	collection = "posts"
 )
