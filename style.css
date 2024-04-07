@@ -10,4 +10,22 @@ body {
     background-color: chartreuse;
 }
 
+.main1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* ボタンと上部のマージンを追加 */
+}
 
+.main1 a {
+    margin: 0 10px; /* ボタン間のマージンを追加 */
+    text-decoration: none; /* リンクの下線を削除 */
+}
+
+.main1 button {
+    padding: 10px 20px; /* ボタンの内側の余白を設定 */
+    background-color: #007bff; /* ボタンの背景色 */
+    color: white; /* ボタンのテキスト色 */
+    border: none; /* ボーダーをなくす */
+    border-radius: 5px; /* ボタンの角を丸める */
+    cursor: pointer; /* ポインターを表示してボタンがクリック可能であることを示す */
+}
