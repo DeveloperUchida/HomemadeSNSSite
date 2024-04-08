@@ -45,9 +45,11 @@ func main() {
 		}
 		//HTMLテンプレートを使用して投稿データを表示
 		tmpl, err := template.ParseFiles("Loginsystem/login.html")
-		if err != null{
+		if err != nil{
 			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+			return
 		}
+		tmpl.Execute(c.Writer, posts)
 
 	})
 
