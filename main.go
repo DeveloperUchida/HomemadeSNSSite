@@ -1,6 +1,7 @@
 package main
 
 import (
+	"html/template"
 	"net/http"
 	"time"
 
@@ -42,7 +43,12 @@ func main() {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 			return
 		}
-		c.JSON(http.StatusOK, posts)
+		//HTMLテンプレートを使用して投稿データを表示
+		tmpl, err := template.ParseFiles("Loginsystem/login.html")
+		if err != null{
+			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		}
+
 	})
 
 	// ポストを作成するエンドポイント
